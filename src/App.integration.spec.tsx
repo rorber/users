@@ -38,9 +38,13 @@ describe("App Integration", () => {
       expect(tblHeadingEl).toHaveTextContent(`Users`);
       expect(tblHeadingEl).not.toHaveTextContent(`(`);
     });
-    it("should show the correct number of user rows", async () => {
+    it("should not show user rows", async () => {
       setup({ isLoading: true });
-      expect(await screen.findAllByTestId(`user-row`)).toHaveLength(1);
+      expect(screen.queryByTestId(`user-row`)).not.toBeInTheDocument();
+    });
+    it("should show a loading indicator", async () => {
+      setup({ isLoading: true });
+      expect(await screen.findByTestId(`loading`)).toBeInTheDocument();
     });
     it("should enable refresh button", async () => {
       setup({ isLoading: true });
@@ -77,6 +81,12 @@ describe("App Integration", () => {
         expect(await screen.findAllByTestId(`user-row`)).toHaveLength(
           expectedUserCount
         );
+      });
+    });
+    it("should not show a loading indicator", async () => {
+      act(() => setup({ data: jsonUsers }));
+      await waitFor(async () => {
+        expect(screen.queryByTestId(`loading`)).not.toBeInTheDocument();
       });
     });
     it("should disable refresh", async () => {
