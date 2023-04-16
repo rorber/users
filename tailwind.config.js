@@ -26,7 +26,7 @@ module.exports = {
         xl: "2rem",
       },
       maxWidth: {
-        content: "1140px",
+        content: "1230px",
       },
     },
   },
