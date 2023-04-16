@@ -16,6 +16,7 @@ Some further improvements:
 - Make generic table and table row components to improve reusability
 - Introduce routing, and a high level layout component
 
+
 ## Available Scripts
 
 In the project directory, you can run:
