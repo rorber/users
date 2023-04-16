@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Beeline Users
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React SPA lists users and their details with the ability to remove them from the list.
+
+Other features:
+- Telephone, URL and Google Maps links provided in the table for relevant information
+- Fairly responsive (down to iPhone SE size) with no glaring issues in Safari, Firefox or Chrome
+- Reasonably accessible (no obvious WCAG issues, user can tab through links, modal, buttons)
+- Loading and error states on table
+- Basic integration tests
+
+Some further improvements:
+- Make the 'Clear' table column sticky so that on smaller viewports the user doesn't have to horizontally scroll to clear
+- Table could be more responsive in general, potentially do away with the rigidity of <table> and use <ul> with flex
+- Integration tests that include clearing and refreshing. Component unit tests
+- Make generic table and table row components to improve reusability
+- Introduce routing, and a high level layout component
 
 ## Available Scripts
 

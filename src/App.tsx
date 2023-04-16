@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { UsersTable } from "./components/UsersTable/UsersTable";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      retry: false,
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div>
+        <header className="px-4 py-12 bg-red">
+          <div className="max-w-content m-auto">
+            <img
+              alt="Beeline logo"
+              height="40px"
+              src="logo.png"
+              width="130px"
+            ></img>
+          </div>
+        </header>
+        <main className="max-w-content mx-auto my-20 px-4">
+          <UsersTable />
+        </main>
+        <footer></footer>
+      </div>
+    </QueryClientProvider>
   );
 }
 
