@@ -11,7 +11,7 @@ Other features:
 
 Some further improvements:
 - Make the 'Clear' table column sticky so that on smaller viewports the user doesn't have to horizontally scroll to clear
-- Table could be more responsive in general, potentially do away with the rigidity of <table> and use <ul> with flex
+- Table could be more responsive in general, potentially do away with the rigidity of \<table> and use \<ul> with flex
 - Integration tests that include clearing and refreshing. Component unit tests
 - Make generic table and table row components to improve reusability
 - Introduce routing, and a high level layout component
